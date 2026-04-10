@@ -22,7 +22,7 @@ jobs:
         uses: lucacome/docker-image-update-checker@v3.1.0
         with:
           base-image: "docker.io/library/caddy:alpine"
-          image: "zhiayang/caddy-l4:latest"
+          image: "ghcr.io/zhiayang/caddy-l4:latest"
           platforms: linux/amd64,linux/arm64
 
   build:
@@ -46,5 +46,5 @@ jobs:
         with:
           context: ./docker
           push: true
-          tags: zhiayang/caddy-l4:latest
+          tags: ghcr.io/zhiayang/caddy-l4:latest
           platforms: linux/amd64,linux/arm64
