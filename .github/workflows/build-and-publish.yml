@@ -3,6 +3,9 @@ name: Build and publish Caddy with L4 module
 on:
   schedule:
     - cron: '0 22 * * *'
+  push:
+    branches:
+      - master
   workflow_dispatch:
 
 jobs:
@@ -18,7 +21,8 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Check for update
+      - name: Check for updates
+        id: check
         uses: lucacome/docker-image-update-checker@v3.1.0
         with:
           base-image: "docker.io/library/caddy:alpine"
