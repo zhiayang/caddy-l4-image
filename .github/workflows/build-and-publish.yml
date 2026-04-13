@@ -31,7 +31,7 @@ jobs:
         with:
           base-image: "docker.io/library/caddy:alpine"
           image: "ghcr.io/zhiayang/caddy-l4-image:latest"
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
 
   build:
     needs: check
@@ -62,4 +62,4 @@ jobs:
           context: ./docker
           push: true
           tags: ghcr.io/zhiayang/caddy-l4-image:latest
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
