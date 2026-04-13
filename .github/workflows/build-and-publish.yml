@@ -61,5 +61,6 @@ jobs:
         with:
           context: ./docker
           push: true
+          provenance: false
           tags: ghcr.io/zhiayang/caddy-l4-image:latest
           platforms: linux/amd64,linux/arm64
